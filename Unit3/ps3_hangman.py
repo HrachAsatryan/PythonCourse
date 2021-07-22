@@ -115,7 +115,7 @@ def hangman(secretWord):
     print(f"I am thinking of a word that is {length} letters long.")
     print("-------------")
     done = False
-    while guessesLeft > 0 or done == True:
+    while guessesLeft > 0 or done is True:
         print(f"You have {guessesLeft} guesses left.")
         print(f"Available letters: {getAvailableLetters(lettersGuessed)}")
         guess = input("Please guess a letter: ")
@@ -133,8 +133,10 @@ def hangman(secretWord):
         if not "_" in getGuessedWord(secretWord, lettersGuessed):
             print("Congratulations, you won!")
             done = True
+            break
         elif guessesLeft == 0:
             print(f"Sorry, you ran out of guesses. The word was {secretWord}.")
+            break
 
 
 
